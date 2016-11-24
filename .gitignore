@@ -3,6 +3,8 @@ capybara-*.html
 .rspec
 /log
 /tmp
+/test
+/db/database.yml
 /db/*.sqlite3
 /db/*.sqlite3-journal
 /public/system
