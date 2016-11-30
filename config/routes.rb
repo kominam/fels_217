@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
+  namespace :admin do
+    resources :categories, only: [:new, :create]
+  end
   resources :users
   get "/:page", to: "static_pages#show"
 end

@@ -12,6 +12,7 @@ en:
   profile: "Profile"
   settings: "Settings"
   logout: "Logout"
+  login_confirm: "You've logged in yet ! Please login"
   static_pages:
     home:
       welcome: "Welcome to the Framgia E-Learning System"
@@ -44,3 +45,11 @@ en:
       signup: "Sign up now!"
     create:
       invalid_login: "Invalid email/password combination"
+  admin:
+    categories:
+      new:
+        add_cate: "Add Category"
+        create_cate: "Create Category"
+      create:
+        create_success: "Creaete Category successfully"
+        create_fail: "Opps ! Failed to create new category"
