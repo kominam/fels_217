@@ -13,6 +13,7 @@ en:
   settings: "Settings"
   logout: "Logout"
   login_confirm: "You've logged in yet ! Please login"
+  account: "Account"
   static_pages:
     home:
       welcome: "Welcome to the Framgia E-Learning System"
@@ -31,6 +32,7 @@ en:
       signup_success: "Welcome to the Framgia E-Learning System"
       signup_fail: "Opps ! Errors occurs while creating new User"
       pwd_confirm: "Confirmation"
+      logout: "Please logout!"
     edit:
       save changes: "Save changes"
       edit user: "edit user"
@@ -57,3 +59,7 @@ en:
         all_categories: "All Categories"
         search: "Search"
         category_name: "Category Name"
+  shared:
+    search_user:
+      search: "Search"
+      name: "Name"
