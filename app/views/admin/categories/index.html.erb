@@ -1,0 +1,27 @@
+<% provide :title, t(".all_categories") %>
+<h1><%= t ".all_categories" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag admin_categories_path, class: "form-inline", method: :get do %>
+      <%= text_field_tag :search, params[:search], size: 50, class: "form-control" %>
+      <%= button_tag t(".search"), class: "btn btn-primary" %>
+   <% end %>
+  </div>
+  <div class="col-md-10 col-md-offset-1">
+    <table class="table table-hover" id="example">
+    <thead>
+      <tr>
+        <th><%= t ".category_name" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td class="col-md-6"><%= category.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+</div>
