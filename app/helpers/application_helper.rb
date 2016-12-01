@@ -7,4 +7,8 @@ module ApplicationHelper
   def render_404
     render file: "public/404.html", status: 404, layout: false
   end
+
+  def admin_user
+    redirect_to root_url unless current_user.is_admin?
+  end
 end
