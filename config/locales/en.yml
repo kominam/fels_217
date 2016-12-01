@@ -53,3 +53,7 @@ en:
       create:
         create_success: "Creaete Category successfully"
         create_fail: "Opps ! Failed to create new category"
+      index:
+        all_categories: "All Categories"
+        search: "Search"
+        category_name: "Category Name"

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   namespace :admin do
-    resources :categories, only: [:new, :create]
+    resources :categories
   end
   resources :users
   get "/:page", to: "static_pages#show"
