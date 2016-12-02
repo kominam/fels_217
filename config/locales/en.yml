@@ -47,13 +47,30 @@ en:
       invalid_login: "Invalid email/password combination"
   admin:
     categories:
+      form:
+        create_cate: "Create Category"
       new:
         add_cate: "Add Category"
-        create_cate: "Create Category"
       create:
-        create_success: "Creaete Category successfully"
+        create_success: "Create Category successfully"
         create_fail: "Opps ! Failed to create new category"
       index:
+        edit: "Edit"
+        del: "Delete"
+        new: "New"
+        words: "Total words"
+        create_title: "Create new Category"
+        create_cate: "Create Category"
+        edit_title: "Edit category"
+        total_cate: "Total categories: "
         all_categories: "All Categories"
         search: "Search"
         category_name: "Category Name"
+        update_cate: "Update Category"
+        confirm: "Are you sure?"
+        close: "Close"
+      destroy:
+        del_success: "Category deleted"
+        del_fail: "Failed to delete category"
+      update:
+        updated: "Updated category"
