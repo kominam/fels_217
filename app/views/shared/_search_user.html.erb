@@ -1,0 +1,10 @@
+<div class="col-md-9 form-group">
+  <%= text_field_tag :q, params[:q],
+    placeholder: t(".name"), class: "form-control" %>
+</div>
+<div class="col-md-3 form-group">
+  <%= button_tag class: "btn btn-primary fe-search" do %>
+    <i class="fa fa-search"></i>
+    <%= t ".search" %>
+  <% end %>
+</div>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, except: [:create, :new, :show]
 
   def index
     @users = User.search_name(params[:q])
@@ -44,6 +45,14 @@ class UsersController < ApplicationController
       redirect_to @user
     else
       render :edit
+    end
+  end
+
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t(".please")
+      redirect_to login_url
     end
   end
 
