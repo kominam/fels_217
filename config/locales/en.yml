@@ -43,6 +43,11 @@ en:
       all: "All user"
     show:
       please: "Please login!"
+    user:
+      you: "You sure?"
+      delete: "Delete"
+    destroy:
+      success: "Success"
   sessions:
     new:
       login: "Log in"
