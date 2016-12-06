@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :logged_in_user, only: [:new, :create]
-  before_action :logged_in_user, except: [:create, :new, :show]
+  before_action :admin_user, only: :destroy
 
   def index
     @users = User.search_name(params[:q])
@@ -56,9 +56,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find_by id: params[:id]
+    if @user.nil?
+      render_404
+    else
+      @user.destroy
+      flash[:success] = t(".success")
+      redirect_to users_url
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit :user_name, :email, :password,
       :password_confirmation
   end
+
+  def admin_user
+    redirect_to root_url unless current_user.is_admin?
+  end
+
 end
