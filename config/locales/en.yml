@@ -14,6 +14,7 @@ en:
   logout: "Logout"
   login_confirm: "You've logged in yet ! Please login"
   account: "Account"
+  user: "Users"
   static_pages:
     home:
       welcome: "Welcome to the Framgia E-Learning System"
@@ -40,6 +41,8 @@ en:
       profile: "Succsess"
     index:
       all: "All user"
+    show:
+      please: "Please login!"
   sessions:
     new:
       login: "Log in"
