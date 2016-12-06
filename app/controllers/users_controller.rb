@@ -2,7 +2,8 @@ class UsersController < ApplicationController
   skip_before_action :logged_in_user, only: [:new, :create]
 
   def index
-    @users = User.all.paginate page: params[:page]
+    @users = User.search_name(params[:q])
+      .paginate page: params[:page]
   end
 
   def show
@@ -16,21 +17,24 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-    if @user.save
-      log_in @user
-      flash[:success] = t ".signup_success"
-      redirect_to @user
+    if current_user.nil?
+      if @user.save
+        log_in @user
+        flash[:success] = t ".signup_success"
+        redirect_to @user
+      else
+        flash.now[:danger] = t ".signup_fail"
+        render :new
+      end
     else
-      flash.now[:danger] = t ".signup_fail"
+      flash.now[:danger] = t ".logout"
       render :new
     end
   end
 
   def edit
     @user = User.find_by id: params[:id]
-    if @user.nil?
-      render file: "public/404.html", layout: false
-    end
+    render_404 if @user.nil?
   end
 
   def update

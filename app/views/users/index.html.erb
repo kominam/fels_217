@@ -1,0 +1,18 @@
+<% provide :title, t(".all") %>
+<h1><%= t (".all") %></h1>
+<div>
+  <%= form_tag users_path, method: :get do %>
+    <%= render "shared/search_user" %>
+  <% end %>
+</div>
+<aside class="col-md-4">
+  <div>
+    <%= will_paginate %>
+
+    <ul class="users">
+      <%= render @users %>
+    </ul>
+
+    <%= will_paginate %>
+  </div>
+</aside>
