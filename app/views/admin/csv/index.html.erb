@@ -1,0 +1,4 @@
+<%= form_tag admin_csv_index_path , multipart: true do %>
+  <%= file_field_tag :file , class: "form-control" %>
+  <%= submit_tag t(".import_btn"), class: "btn btn-primary" %>
+<% end %>

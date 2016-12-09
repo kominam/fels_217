@@ -67,6 +67,11 @@ en:
         all_categories: "All Categories"
         search: "Search"
         category_name: "Category Name"
+    csv:
+      create:
+        imported: "Word imported !"
+      index:
+        import_btn: "Import"
   shared:
     search_user:
       search: "Search"

@@ -1,5 +1,5 @@
 class Admin::CategoriesController < ApplicationController
-  before_action :admin_user
+  before_action :verify_admin
   before_action :load_category, except: [:index, :new, :create]
 
   def index
