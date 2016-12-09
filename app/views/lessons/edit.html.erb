@@ -1,0 +1,22 @@
+<% provide :title, t(".lesson") %>
+<div>
+  <div>
+    <label><%= t ".cate_name" %>:</label>
+    <%= @lesson.category.name %>
+  </div>
+  <div>
+    <label><%= t ".created_at" %></label>
+    <%= @lesson.created_at.strftime(Settings.date_time) %>
+  </div>
+</div>
+<h1><%= t ".exam" %></h1>
+<ol>
+  <%= form_for @lesson do |f| %>
+    <%= f.fields_for :results do |result| %>
+      <%= render "question", f: result %>
+    <% end %>
+    <div class="col-md-2">
+      <%= f.submit t(".save_btn"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</ol>
