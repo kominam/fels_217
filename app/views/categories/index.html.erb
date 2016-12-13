@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_tag admin_categories_path, class: "form-inline", method: :get do %>
+    <%= form_tag categories_path, class: "form-inline", method: :get do %>
       <%= text_field_tag :search, params[:search], size: 50, class: "form-control" %>
       <%= button_tag t(".search"), class: "btn btn-primary" %>
    <% end %>
@@ -11,7 +11,7 @@
   <div class="col-md-10 col-md-offset-1">
     <div>
       <span class="pull-right" style="line-height: 50px;">
-        <%= t(".total_cate") + @categories.count.to_s %>
+        <%= t(".total_cate") + @categories.size.to_s %>
       </span>
     </div>
     <table class="table table-hover">
@@ -23,15 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        <% @categories.each do |category| %>
-          <tr>
-            <td class="col-md-6"><%= category.name %></td>
-            <td class="col-md-2"><%= category.words.count %></td>
-            <td class="col-md-1">
-              <%= link_to t(".start"), "#",class: "btn btn-primary" %>
-            </td>
-          </tr>
-        <% end %>
+        <%= render @categories %>
       </tbody>
     </table>
     <%= will_paginate @categories %>

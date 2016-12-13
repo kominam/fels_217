@@ -100,4 +100,14 @@ en:
       total_cate: "Total categories: "
       words: "Total words"
       category_name: "Category Name"
+    category:
       start: "Start"
+  lessons:
+    create:
+      lesson_created: "Lesson created successfully !"
+    edit:
+      lesson: "Lesson"
+      exam: "Examination"
+      cate_name: "Category name"
+      created_at: "Created at:"
+      save_btn: "Save"
