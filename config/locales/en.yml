@@ -95,6 +95,7 @@ en:
       name: "Name"
   categories:
     index:
+      index: "Index"
       all_categories: "All Categories"
       search: "Search"
       total_cate: "Total categories: "
