@@ -13,7 +13,20 @@ class LessonsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   def edit
+  end
+
+  def update
+    if @lesson.update_attributes lesson_params.merge is_complete: true
+      flash[:success] = t ".update_sucess"
+      redirect_to lesson_path @lesson
+    else
+      flash[:danger] = t ".update_fail"
+      redirect_to categories_path
+    end
   end
 
   private
