@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     @categories = Category.all
   end
 
+  def load_user
+    @user = User.find_by id: params[:id]
+    render_404 if @user.nil?
+  end
+
   private
 
   def logged_in_user

@@ -1,0 +1,11 @@
+  <li>
+    <span>
+      <%= user_activity activity %>
+      <%= activity_description activity %>
+      <%= target_object activity %>
+    </span>
+    <span>
+      <%= time_ago_in_words activity.created_at %>
+      <%= t ".ago" %>(<%= activity.created_at %>)
+    </span>
+  </li>

@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     end
   end
   resources :relationships, only: [:create, :destroy]
-  resources :lessons, :categories, :words
+  resources :lessons, :categories, :words, :activities
   get "/:page", to: "static_pages#show"
 end

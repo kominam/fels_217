@@ -6,6 +6,7 @@ class LessonsController < ApplicationController
       user_id: current_user.id
     if @lesson.save
       flash[:success] = t ".lesson_created"
+      @lesson.start_lesson_action(current_user)
       redirect_to edit_lesson_path @lesson
     else
       flash[:danger] = @lesson.errors.full_messages
@@ -22,6 +23,7 @@ class LessonsController < ApplicationController
   def update
     if @lesson.update_attributes lesson_params.merge is_complete: true
       flash[:success] = t ".update_sucess"
+      @lesson.finish_lesson_action(current_user)
       redirect_to lesson_path @lesson
     else
       flash[:danger] = t ".update_fail"

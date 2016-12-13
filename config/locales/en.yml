@@ -47,6 +47,7 @@ en:
     show:
       please: "Please login!"
       lesson: "Review lesson"
+      activities: "Activities"
     user:
       you: "You sure?"
       delete: "Delete"
@@ -59,9 +60,9 @@ en:
     lessons:
       index: "Index"
       lesson: "Lesson"
-      category: "Category"
-      status: "Status"
+      cate_name: "Category"
       mark: "Mark"
+      status: "Status"
   sessions:
     new:
       login: "Log in"
@@ -186,5 +187,22 @@ en:
       correct: "correct answer"
       wrong: "wrong answer"
     lesson:
-      complete: "Complete"
+      done: "Done"
       doing: "Doing"
+  words:
+    index:
+      all_words: "All words"
+      index: "Index"
+      category: "Category"
+      word_content: "Word content"
+      action: "Action"
+      add_word: "Add words"
+  activities:
+    index:
+      activities: "Activities"
+    activity:
+      started_lesson: "start lesson "
+      finish_lesson: "finished lesson "
+      ago: "ago "
+      follow: "follow"
+      unfollow: "unfollow"
