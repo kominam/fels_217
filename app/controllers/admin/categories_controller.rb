@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
 
   def index
     @categories = Category.search(params[:search]).includes(:words).recent
-      .paginate page: params[:page]
+      .paginate page: params[:page], per_page: Settings.per_page
     @category = Category.new
   end
 

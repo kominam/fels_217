@@ -8,7 +8,7 @@ class Lesson < ApplicationRecord
     reject_if: proc{|attributes| attributes["content"].blank?}
 
   def word_for_lesson
-    self.category.words.order("Random()").limit(4).each do |word|
+    self.category.words.limit(Settings.word_per_lesson).shuffle.each do |word|
       self.results.build word_id: word.id
     end
   end

@@ -11,4 +11,8 @@ module ApplicationHelper
   def verify_admin
     redirect_to root_url unless current_user.is_admin?
   end
+
+  def index_for counter, page, per_page
+    (page - 1) * per_page + counter + 1
+  end
 end
