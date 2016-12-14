@@ -6,6 +6,8 @@ class Word < ApplicationRecord
   validates :content, presence: true, length: {maximum: 50},
     uniqueness: {case_sensitive: false}
 
+  validate :check_answers
+
   accepts_nested_attributes_for :answers, allow_destroy: true,
     reject_if: proc{|attributes| attributes["content"].blank?}
 
@@ -33,6 +35,18 @@ class Word < ApplicationRecord
       all.each do |word|
         csv << attributes.map{|attr| word.send(attr)}
       end
+    end
+  end
+
+  private
+  def check_answers
+    number_correct = 0
+    self.answers.each do |answer|
+      number_correct += 1 if answer.is_correct?
+    end
+
+    if number_correct != 1
+      self.errors.add :answers, I18n.t(".require_1_correct")
     end
   end
 end

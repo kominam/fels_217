@@ -152,3 +152,14 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+.inline {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.show_score {
+  color: blue;
+  font-weight:bold;
+  font-size: 1.5 em;
+}

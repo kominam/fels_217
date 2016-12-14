@@ -12,7 +12,7 @@
 <h1><%= t ".exam" %></h1>
 <div>
   <label><%= t ".mark" %></label>
-  <span>
+  <span class="show_score">
     <%= @lesson.number_correct_answer.to_s + " / " + @lesson.results.size.to_s %>
   </span>
 </div>

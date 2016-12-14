@@ -3,5 +3,12 @@
   <label class="radio-inline">
     <%= answer.content %>
   </label>
-  <%= f.radio_button :answer_id, answer.id %>
+  <%= f.radio_button :answer_id, answer.id , disabled: @lesson.is_complete?%>
+<% end %>
+<% if @lesson.is_complete? %>
+  <% if correct_answer f.object.answer_id %>
+    <p class="label label-primary"><%= t ".correct" %></p>
+  <% else %>
+    <p class="label label-danger"><%= t ".wrong" %></p>
+  <% end %>
 <% end %>

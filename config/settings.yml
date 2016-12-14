@@ -2,3 +2,4 @@ date_time: "%I:%M%p %m/%d/%Y"
 per_page: 5
 avatar_size: 50
 word_per_lesson: 5
+answer_number: 3
