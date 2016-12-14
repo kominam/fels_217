@@ -39,10 +39,11 @@ ActiveRecord::Schema.define(version: 20161124080053) do
   create_table "lessons", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "category_id"
-    t.boolean  "status",      default: false
+    t.boolean  "is_complete", default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.index ["category_id"], name: "index_lessons_on_category_id"
+    t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|

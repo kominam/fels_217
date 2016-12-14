@@ -9,8 +9,13 @@
   </div>
   <div class="col-md-10 col-md-offset-1">
     <div class="col-md-6">
-      <%= link_to t(".new"), new_admin_category_path, class: "btn btn-success",
+      <span>
+        <%= link_to t(".new"), new_admin_category_path, class: "btn btn-success",
         id: "createCate" %>
+      </span>
+      <span>
+        <%= link_to t(".import"), admin_csv_index_path %>
+      </span>
       <div id="newCate" class="modal fade" role="form">
         <div class="modal-dialog">
           <div class="modal-content">

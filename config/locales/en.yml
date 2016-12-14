@@ -65,6 +65,7 @@ en:
         create_success: "Create Category successfully"
         create_fail: "Opps ! Failed to create new category"
       index:
+        import: "Import words/answers"
         edit: "Edit"
         del: "Delete"
         new: "New"
@@ -112,3 +113,13 @@ en:
       cate_name: "Category name"
       created_at: "Created at:"
       save_btn: "Save"
+    update:
+      update_sucess: "Lesson submited"
+      update_fail: "Fail to submit lesson"
+    show:
+      review: "Revision"
+      exam: "Review Examination"
+      cate_name: "Category name"
+      created_at: "Created at:"
+      save_btn: "Save"
+      mark: "Mark :"
