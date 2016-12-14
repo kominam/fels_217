@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :categories
     resources :csv, :words
   end
-  resources :users, :lessons, :categories
+  resources :users, :lessons, :categories, :words
   get "/:page", to: "static_pages#show"
 end
