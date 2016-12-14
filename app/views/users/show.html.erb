@@ -8,7 +8,10 @@
       <%= render "shared/stats" %>
     </section>
   </aside>
-  <div class="col-md-8">
+  <div class="col-md-5">
     <%= render "follow_form" if logged_in? %>
+  <div class="col-md-6">
+    <%= t ".lesson" %>
+    <%= render "lessons" %>
   </div>
 </div>

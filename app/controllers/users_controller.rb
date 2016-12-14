@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by id: params[:id]
     render_404 if @user.nil?
+    @lessons = @user.lessons.paginate page: params[:page],
+      per_page: Settings.per_page
   end
 
   def new

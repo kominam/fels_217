@@ -4,11 +4,11 @@ class LessonsController < ApplicationController
   def create
     @lesson = current_user.lessons.build category_id: params[:category_id],
       user_id: current_user.id
-    if @lesson.save!
+    if @lesson.save
       flash[:success] = t ".lesson_created"
       redirect_to edit_lesson_path @lesson
     else
-      flash[:danger] = @lesson.errors._full_messages
+      flash[:danger] = @lesson.errors.full_messages
       redirect_to categories_path
     end
   end

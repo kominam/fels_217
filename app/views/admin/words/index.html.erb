@@ -2,6 +2,12 @@
 <h1><%= t ".all_words" %></h1>
 
 <div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag words_path, class: "form-inline", method: :get do %>
+      <%= text_field_tag :search, params[:search], size: 50, class: "form-control" %>
+      <%= button_tag t(".search"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
   <div class="col-md-10 col-md-offset-1">
     <div>
       <span>

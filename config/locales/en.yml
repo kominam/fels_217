@@ -16,6 +16,8 @@ en:
   account: "Account"
   user: "Users"
   word: "Words"
+  not_enough_word: "Fail to start lesson: not enough word"
+  require_1_correct: "require 1 correct answer"
   static_pages:
     home:
       welcome: "Welcome to the Framgia E-Learning System"
@@ -44,6 +46,7 @@ en:
       all: "All user"
     show:
       please: "Please login!"
+      lesson: "Review lesson"
     user:
       you: "You sure?"
       delete: "Delete"
@@ -53,6 +56,12 @@ en:
       follow_btn: "Follow"
     unfollow:
       unfollow_btn: "Unfollow"
+    lessons:
+      index: "Index"
+      lesson: "Lesson"
+      category: "Category"
+      status: "Status"
+      mark: "Mark"
   sessions:
     new:
       login: "Log in"
@@ -176,11 +185,6 @@ en:
     question:
       correct: "correct answer"
       wrong: "wrong answer"
-  words:
-    index:
-      all_words: "All words"
-      index: "Index"
-      category: "Category"
-      word_content: "Word content"
-      action: "Action"
-      add_word: "Add words"
+    lesson:
+      complete: "Complete"
+      doing: "Doing"
