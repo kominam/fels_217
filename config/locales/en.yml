@@ -92,11 +92,24 @@ en:
       index:
         import_btn: "Import"
     words:
+      index:
+        all_words: "All words"
+        index: "Index"
+        category: "Category"
+        word_content: "Word content"
+        action: "Action"
+        add_word: "Add words"
       new:
         add_word: "Add words"
+      edit:
+
       word:
-        create: "Create"
         add: "Add more"
+        confirm: "Are you sure?"
+        del: "Delete"
+        edit: "Edit"
+      form:
+        create: "Create"
       create:
         word_created: "Create word successfully"
         create_word_failed: "Fail to create word"
@@ -142,3 +155,11 @@ en:
     question:
       correct: "correct answer"
       wrong: "wrong answer"
+  words:
+    index:
+      all_words: "All words"
+      index: "Index"
+      category: "Category"
+      word_content: "Word content"
+      action: "Action"
+      add_word: "Add words"
