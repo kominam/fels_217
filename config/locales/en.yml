@@ -15,6 +15,7 @@ en:
   login_confirm: "You've logged in yet ! Please login"
   account: "Account"
   user: "Users"
+  word: "Words"
   static_pages:
     home:
       welcome: "Welcome to the Framgia E-Learning System"
@@ -90,6 +91,21 @@ en:
         imported: "Word imported !"
       index:
         import_btn: "Import"
+    words:
+      new:
+        add_word: "Add words"
+      word:
+        create: "Create"
+        add: "Add more"
+      create:
+        word_created: "Create word successfully"
+        create_word_failed: "Fail to create word"
+      update:
+        word_updated: "Word updated"
+        word_udpate_fail: "Fail to update word"
+      destroy:
+        word_destroyed: "Delete word successfully"
+        fail_destroy_word: "Fail to delete word"
   shared:
     search_user:
       search: "Search"
@@ -123,3 +139,6 @@ en:
       created_at: "Created at:"
       save_btn: "Save"
       mark: "Mark :"
+    question:
+      correct: "correct answer"
+      wrong: "wrong answer"

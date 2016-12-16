@@ -1,0 +1,14 @@
+<%= form_for [:admin, @word] do |f| %>
+  <%= f.label :category %>
+  <%= f.select :category_id, @categories.collect {|cate| [cate.name, cate.id]},
+    class: "form-control" %>
+  <%= f.label :question %>
+  <%= f.text_field :content, class: "form-control", required: true %>
+  <p>
+    <%= f.fields_for :answers do |builder| %>
+      <%= render "answer_fields", f: builder %>
+    <%end%>
+  </p>
+  <%= link_to_add_fields t(".add"), f, :answers %>
+  <%= f.submit t(".create"), class: "btn btn-primary" %>
+<% end %>

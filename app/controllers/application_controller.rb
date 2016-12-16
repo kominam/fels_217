@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
 
   before_action :logged_in_user
 
+  def load_all_category
+    @categories = Category.all
+  end
+
   private
 
   def logged_in_user

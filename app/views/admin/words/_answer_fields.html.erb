@@ -1,0 +1,10 @@
+<fieldset class="answer">
+  <%= f.label :answers %>
+  <%= f.text_field :content, class: "form-control", required: true %>
+  <li class="inline">
+    <%= f.label :correct %>
+    <%= f.check_box :is_correct %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to t(".remove"), "#", class: "remove_fields" %>
+  </li>
+</fieldset>
