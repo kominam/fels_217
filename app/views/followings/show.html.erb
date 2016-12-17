@@ -1,0 +1,35 @@
+<% provide :title, t(".follow") %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= gravatar_for @user %>
+      <h1><%= @user.user_name %></h1>
+    </section>
+    <section class="stats">
+      <%= render "shared/stats" %>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <%= link_to gravatar_for(user, size: Settings.avatar_small), user %>
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <table class="table table-striped">
+        <thead>
+          <th><%= t ".avatar" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".email" %></th>
+        </thead>
+        <tbody>
+          <%= render @users %>
+        </tbody>
+        <%= will_paginate @users %>
+      </table>
+    <% end %>
+  </div>
+</div>
