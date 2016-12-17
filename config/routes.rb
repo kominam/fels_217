@@ -9,6 +9,13 @@ Rails.application.routes.draw do
     resources :categories
     resources :csv, :words
   end
-  resources :users, :lessons, :categories, :words
+  resources :users do
+    member do
+      resources :followers
+      resources :followings
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
+  resources :lessons, :categories, :words
   get "/:page", to: "static_pages#show"
 end

@@ -7,12 +7,16 @@
 </div>
 <aside class="col-md-4">
   <div>
-    <%= will_paginate %>
-
-    <ul class="users">
-      <%= render @users %>
-    </ul>
-
-    <%= will_paginate %>
+    <table class="table table-striped">
+      <thead>
+        <th><%= t ".avatar" %></th>
+        <th><%= t ".name" %></th>
+        <th><%= t ".email" %></th>
+      </thead>
+      <tbody>
+        <%= render @users %>
+      </tbody>
+      <%= will_paginate @users %>
+    </table>
   </div>
 </aside>

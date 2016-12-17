@@ -49,6 +49,10 @@ en:
       delete: "Delete"
     destroy:
       success: "Success"
+    follow:
+      follow_btn: "Follow"
+    unfollow:
+      unfollow_btn: "Unfollow"
   sessions:
     new:
       login: "Log in"
@@ -123,6 +127,23 @@ en:
     search_user:
       search: "Search"
       name: "Name"
+    user_info:
+      view_profile: "View Profile"
+    stats:
+      following: "Following"
+      follower: "Followers"
+  followers:
+    show:
+      follow: "Followers"
+      avatar: "Avatar"
+      name: "Name"
+      email: "Email"
+  followings:
+    show:
+      follow: "Followers"
+      avatar: "Avatar"
+      name: "Name"
+      email: "Email"
   categories:
     index:
       index: "Index"
