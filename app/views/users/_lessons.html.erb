@@ -1,0 +1,16 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t ".index" %></th>
+        <th><%= t ".lesson" %></th>
+        <th><%= t ".category" %></th>
+        <th><%= t ".status" %></th>
+        <th><%= t ".mark" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @lessons %>
+    </tbody>
+  </table>
+</div>

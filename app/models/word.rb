@@ -14,6 +14,7 @@ class Word < ApplicationRecord
     reject_if: proc{|attributes| attributes["content"].blank?}
 
   scope :all_words, ->category_id {where category_id = category_id}
+  scope :search, ->search{where "content LIKE ?", "%#{search}%"}
 
   def self.import file
     CSV.foreach(file.path, headers: true, col_sep: "|", header_converters: :symbol) do |row|
