@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :logged_in_user, only: [:new, :create]
-  before_action :admin_user, only: :destroy
+  before_action :load_user, except: [:index, :new, :create]
+  before_action :verify_admin, only: :destroy
 
   def index
     @users = User.search_name(params[:q])
@@ -8,9 +9,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by id: params[:id]
-    render_404 if @user.nil?
-    @lessons = @user.lessons.paginate page: params[:page],
+    @activities = @user.activities.recent.paginate page: params[:activities_page],
+      per_page: Settings.per_page
+    @lessons = @user.lessons.recent.paginate page: params[:lesson_page],
       per_page: Settings.per_page
   end
 
@@ -36,12 +37,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by id: params[:id]
-    render_404 if @user.nil?
   end
 
   def update
-    @user = User.find_by id: params[:id]
     if @user.update_attributes user_params
       flash[:success] = t(".profile")
       redirect_to @user
@@ -59,11 +57,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by id: params[:id]
-    if @user.nil?
-      render_404
-    else
-      @user.destroy
+    if @user.destroy
       flash[:success] = t(".success")
       redirect_to users_url
     end
@@ -75,8 +69,7 @@ class UsersController < ApplicationController
       :password_confirmation
   end
 
-  def admin_user
+  def verify_admin
     redirect_to root_url unless current_user.is_admin?
   end
-
 end

@@ -33,4 +33,42 @@ module ApplicationHelper
     link_to(name, '#', class: "add_fields",
       data: {id: id, answers: fields.gsub("\n", "")})
   end
+
+  def user_activity activity
+    activity.user.user_name if activity.user == current_user
+  end
+
+  def activity_description activity
+    case activity.action_type
+    when Activity.actions[:start_lesson]
+      t ".started_lesson"
+    when Activity.actions[:finish_lesson]
+      t ".finish_lesson"
+    when Activity.actions[:follow]
+      t ".follow"
+    when Activity.actions[:unfollow]
+      t ".unfollow"
+    end
+  end
+
+  def target_object activity
+    case activity.action_type
+    when Activity.actions[:start_lesson]
+      t ".started_lesson"
+      lesson = Lesson.find_by id: activity.target_id
+      link_to lesson.category_name, lesson.category
+    when Activity.actions[:finish_lesson]
+      t ".finish_lesson"
+      lesson = Lesson.find_by id: activity.target_id
+      link_to lesson.category_name, lesson.category
+    when Activity.actions[:follow]
+      t ".follow"
+      user = User.find_by id: activity.target_id
+      link_to user.user_name, user
+    when Activity.actions[:unfollow]
+      t ".unfollow"
+      user = User.find_by id: activity.target_id
+      link_to user.user_name, user
+    end
+  end
 end

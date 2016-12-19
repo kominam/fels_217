@@ -1,16 +1,15 @@
-<div class="table-responsive">
+<div class="table-reponsive">
   <table class="table">
-    <thead>
-      <tr>
-        <th><%= t ".index" %></th>
-        <th><%= t ".lesson" %></th>
-        <th><%= t ".category" %></th>
-        <th><%= t ".status" %></th>
-        <th><%= t ".mark" %></th>
-      </tr>
-    </thead>
+    <tr>
+      <th><%= t ".index" %></th>
+      <th><%= t ".lesson" %></th>
+      <th><%= t ".cate_name" %></th>
+      <th><%= t ".mark" %></th>
+      <th><%= t ".status" %></th>
+    </tr>
     <tbody>
       <%= render @lessons %>
     </tbody>
   </table>
+  <%= will_paginate @lessons, param_name: "lesson_page" %>
 </div>

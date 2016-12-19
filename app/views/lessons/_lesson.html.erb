@@ -5,13 +5,15 @@
   <td><%= lesson.id %></td>
   <td><%= lesson.category_name %></td>
   <td>
-    <% if lesson.is_complete %>
-      <%= link_to t(".complete"), lesson_path(lesson), class: "btn btn-success" %>
-    <% else %>
-      <%= link_to t(".doing"), edit_lesson_path(lesson), class: "btn btn-info" %>
-    <% end %>
-  </td>
-  <td>
     <%= lesson.number_correct_answer.to_s + " / " + lesson.results.size.to_s %>
   </td>
+  <% if lesson.is_complete %>
+    <td>
+      <%= link_to t(".done"), lesson_path(lesson), class: "btn btn-success" %>
+    </td>
+  <% else %>
+    <td>
+      <%= link_to t(".doing"), edit_lesson_path(lesson), class: "btn btn-info" %>
+    </td>
+  <% end %>
 </tr>
