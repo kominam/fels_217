@@ -1,11 +1,16 @@
 class Admin::WordsController < ApplicationController
   before_action :verify_admin
   before_action :load_all_category, except: :show
-  before_action :load_word, only: [:update, :destroy, :edit]
+  before_action :load_word, except: [:index,:create, :new]
 
   def index
-    @words = Word.all_words(current_user.id, params[:search])
+    @words = Word.in_category(params[:category_id])
+      .all_words(current_user.id, params[:search]).includes(:category)
       .paginate page: params[:page], per_page: Settings.per_page
+  end
+
+  def show
+    @answers = @word.answers
   end
 
   def edit
