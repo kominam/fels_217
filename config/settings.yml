@@ -6,3 +6,7 @@ answer_number: 3
 avatar_small: 30
 activity_size: 5
 lesson_size: 1
+options:
+  - all_words
+  - learnt
+  - not_yet

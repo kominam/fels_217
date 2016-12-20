@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
   $('input:file').change(
     function(){
       if ($(this).val()) {

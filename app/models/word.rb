@@ -13,8 +13,18 @@ class Word < ApplicationRecord
   accepts_nested_attributes_for :answers, allow_destroy: true,
     reject_if: proc{|attributes| attributes["content"].blank?}
 
-  scope :all_words, ->category_id {where category_id = category_id}
-  scope :search, ->search{where "content LIKE ?", "%#{search}%"}
+  scope :all_words, ->user_id, search{where "content like ?", "%#{search}%"}
+  scope :in_category,->category_id{where "category_id = ?",
+    category_id if category_id.present?}
+  scope :learnt,->user_id, search{where LEARNT_QUERY, user_id: user_id,
+    search: "%#{search}%"}
+  scope :not_yet,->user_id, search{where NOT_YET_QUERY, user_id: user_id,
+    search: "%#{search}%"}
+  scope :recent,->{order created_at: :desc}
+  LEARNT_QUERY = "content like :search and id IN (SELECT word_id FROM results r
+    INNER JOIN lessons l ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
+  NOT_YET_QUERY = "content like :search and id NOT IN (SELECT word_id FROM results r
+    INNER JOIN lessons l ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
 
   def self.import file
     CSV.foreach(file.path, headers: true, col_sep: "|", header_converters: :symbol) do |row|
@@ -29,7 +39,7 @@ class Word < ApplicationRecord
       end
       row[:answers_attributes] = answers_attributes
       row.delete :answers
-      Word.create! row
+      Word.create row
     end
   end
 
