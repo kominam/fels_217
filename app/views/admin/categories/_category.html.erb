@@ -1,0 +1,45 @@
+<tr id="cate">
+  <td>
+    <%= index_for category_counter, @categories.current_page, Settings.per_page %>
+  </td>
+  <td id="cate_name_<%= category.id %>" class="col-md-6">
+    <%= category.name %>
+  </td>
+  <td class="col-md-2"><%= category.words.size %></td>
+  <td class="col-md-1">
+    <%= link_to t(".show"), admin_words_path, class: "btn btn-default" %>
+  </td>
+  <td class="col-md-1">
+    <button id="<%= category.id %>" class="update btn btn-info">
+      <%= t ".edit" %>
+    </button>
+  </td>
+  <td class="col-md-1"><%= link_to t(".del"),
+    admin_category_path(category), method: :delete, remote: true,
+    id: category.id,
+    data: {confirm: t(".confirm")}, class: "del btn btn-danger" %></td>
+    <div id="edit_<%= category.id %>" class="modal fade" role="form">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;
+            </button>
+            <h4 class="modal-title"><%= t ".edit_title" %></h4>
+          </div>
+          <div class="modal-body">
+            <%= form_for [:admin, category], remote: true do |f| %>
+              <%= render "shared/error_messages", object: f.object %>
+              <%= f.label :name %>
+              <%= f.text_field :name, class: "form-control" %>
+              <%= f.submit t(".update_cate"), id: "update_" + category.id.to_s,
+                class: "btn btn-primary" %>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+            <%= t ".close" %></button>
+          </div>
+        </div>
+      </div>
+    </div>
+</tr>

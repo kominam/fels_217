@@ -5,6 +5,9 @@
   <td class="col-md-6"><%= word.category_name %></td>
   <td class="col-md-2"><%= word.content %></td>
   <td class="col-md-1">
+    <%= link_to t(".show"), admin_word_path(word), class: "btn btn-default" %>
+  </td>
+  <td class="col-md-1">
     <%= link_to t(".edit"), edit_admin_word_path(word), class: "btn btn-info" %>
   </td>
   <td>

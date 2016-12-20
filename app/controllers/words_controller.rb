@@ -1,4 +1,5 @@
 class WordsController < ApplicationController
+  before_action :load_all_category, only: :index
 
   def index
     params[:search] ||= ""

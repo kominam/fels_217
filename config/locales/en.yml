@@ -81,16 +81,19 @@ en:
         create_fail: "Opps ! Failed to create new category"
       index:
         import: "Import words/answers"
-        edit: "Edit"
-        del: "Delete"
-        new: "New"
         words: "Total words"
-        create_title: "Create new Category"
-        create_cate: "Create Category"
-        edit_title: "Edit category"
         total_cate: "Total categories: "
         all_categories: "All Categories"
         search: "Search"
+        new: "New"
+        index: "Index"
+      category:
+        edit: "Edit"
+        del: "Delete"
+        show: "Show"
+        create_title: "Create new Category"
+        create_cate: "Create Category"
+        edit_title: "Edit category"
         category_name: "Category Name"
         update_cate: "Update Category"
         confirm: "Are you sure?"
@@ -115,13 +118,17 @@ en:
         add_word: "Add words"
       new:
         add_word: "Add words"
-      edit:
-
+      show:
+        detail_words: "Word details"
+        category: "Category"
+        content: "Content"
+        answer: "Answer"
       word:
         add: "Add more"
         confirm: "Are you sure?"
         del: "Delete"
         edit: "Edit"
+        show: "Show"
       form:
         create: "Create"
       create:
