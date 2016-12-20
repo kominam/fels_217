@@ -197,6 +197,7 @@ en:
       word_content: "Word content"
       action: "Action"
       add_word: "Add words"
+      search: "Search"
   activities:
     index:
       activities: "Activities"

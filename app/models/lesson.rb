@@ -2,8 +2,8 @@ class Lesson < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_many :results, dependent: :destroy
-  validate :word_for_lesson, :lesson_size
 
+  before_create :word_for_lesson
   delegate :name, to: :category, prefix: true
 
   validate :lesson_size

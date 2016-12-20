@@ -56,11 +56,11 @@ module ApplicationHelper
     when Activity.actions[:start_lesson]
       t ".started_lesson"
       lesson = Lesson.find_by id: activity.target_id
-      link_to lesson.category_name, lesson.category
+      link_to lesson.category_name, lesson.category unless lesson.nil?
     when Activity.actions[:finish_lesson]
       t ".finish_lesson"
       lesson = Lesson.find_by id: activity.target_id
-      link_to lesson.category_name, lesson.category
+      link_to lesson.category_name, lesson.category unless lesson.nil?
     when Activity.actions[:follow]
       t ".follow"
       user = User.find_by id: activity.target_id
