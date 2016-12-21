@@ -9,14 +9,16 @@
   <div class="col-md-10 col-md-offset-1">
     <table class="table table-striped">
       <thead>
+        <th><%= t ".index" %></th>
         <th><%= t ".avatar" %></th>
         <th><%= t ".name" %></th>
         <th><%= t ".email" %></th>
+        <th><%= t ".delete" %></th>
       </thead>
       <tbody>
         <%= render @users %>
       </tbody>
-      <%= will_paginate @users %>
     </table>
+    <%= will_paginate @users %>
   </div>
 </aside>

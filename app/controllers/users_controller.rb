@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.search_name(params[:q])
-      .paginate page: params[:page]
+      .paginate page: params[:page], per_page: Settings.user.per_page
   end
 
   def show

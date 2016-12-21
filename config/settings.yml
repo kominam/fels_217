@@ -10,3 +10,5 @@ options:
   - all_words
   - learnt
   - not_yet
+user:
+  per_page: 10

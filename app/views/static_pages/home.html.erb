@@ -1,5 +1,46 @@
 <% provide :title, t("home") %>
-<div class="center jumbotron">
-  <h1><%= t ".welcome"%></h1>
-  <%= link_to t("signup") , signup_path , class: "btn btn-lg btn-primary" %>
+<%= render "layouts/banner" %>
+<div class="banner-bottom">
+  <div class="container">
+    <h2 class="tittle"><%= t ".welcome" %></h2>
+    <div class="bottom-grids">
+      <div class="col-md-3 bottom-grid">
+        <div class="bottom-text">
+          <h3><%= t ".instruction" %></h3>
+          <p><%= t ".detail" %></p>
+        </div>
+        <div class="bottom-spa">
+          <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="col-md-3 bottom-grid">
+        <div class="bottom-text">
+          <h3><%= t ".support" %></h3>
+          <p><%= t ".detail" %></p>
+        </div>
+        <div class="bottom-spa">
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="col-md-3 bottom-grid">
+        <div class="bottom-text">
+          <h3><%= t ".guarantee" %></h3>
+          <p><%= t ".detail" %></p>
+        </div>
+        <div class="bottom-spa">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="col-md-3 bottom-grid">
+        <div class="bottom-text">
+          <h3><%= t ".reliable" %></h3>
+          <p><%= t ".detail" %></p>
+        </div>
+        <div class="bottom-spa">
+          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
 </div>
