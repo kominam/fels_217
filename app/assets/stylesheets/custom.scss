@@ -4,11 +4,49 @@
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+$color_malachite_approx: #2fd828;
 
 /* universal */
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-  padding-top: 60px;
+  margin:0;
+  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h4, h5, h6,
+h1, h2, h3 {
+  margin: 0;
+}
+p{
+  margin:0;
+}
+ul,label{
+  margin:0;
+  padding:0;
+}
+input[type="button"],input[type="submit"]{
+  transition:0.5s all;
+  -webkit-transition:0.5s all;
+  -moz-transition:0.5s all;
+  -o-transition:0.5s all;
+  -ms-transition:0.5s all;
+}
+body a{
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  text-decoration:none;
+
+}
+body a:hover{
+  text-decoration:none;
 }
 
 section {
@@ -56,26 +94,93 @@ p {
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
+.header {
+  background: #05969b;
+}
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0px;
+  border:none;
+}
+.navbar-nav {
+  float: right;
+  width: 50%;
+  li {
+    a {
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
   }
-  img {
-    width: 40px;
-    height: 40px;
+}
+.navbar-default {
+  background:none;
+  border-color: #012231;
+  .navbar-brand {
+    font-family: 'Alegreya', serif;
+    color: #fff;
+    font-size:48px;
+    text-decoration: none;
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .navbar-collapse, .navbar-form {
+    padding: 0;
+  }
+  .navbar-nav {
+    li {
+      a {
+        color: #fff;
+        font-size: 16px;
+      }
+    }
+    .active {
+      a {
+        &:hover, &:focus{
+          color: #fff;
+          background-color: #2FD828;
+        }
+      }
+    }
   }
 }
 
-/* footer */
+.glyphicon-cutlery {
+  left: -10px;
+  top: 7px;
+}
+
+a.navbar-brand span {
+  color: #2FD828;
+  margin-left: 12px;
+}
+
+.navbar-default .navbar-nav > li > a{
+  color: #fff;
+  font-size: 16px;
+}
+
+.navbar-brand {
+  height: 0;
+  padding: 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+  &:hover {
+    color: $color_malachite_approx;
+  }
+  &:focus {
+    color: $color_malachite_approx;
+  }
+  &.active {
+    color: $color_malachite_approx;
+  }
+}
+
+.dropdown-menu {
+  background-color: pink;
+}
 
 footer {
   margin-top: 45px;

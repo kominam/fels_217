@@ -1,12 +1,12 @@
 <% provide :title, t(".all") %>
 <h1><%= t (".all") %></h1>
-<div>
-  <%= form_tag users_path, method: :get do %>
-    <%= render "shared/search_user" %>
-  <% end %>
-</div>
-<aside class="col-md-4">
-  <div>
+<aside class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <%= form_tag users_path, method: :get do %>
+      <%= render "shared/search_user" %>
+    <% end %>
+  </div>
+  <div class="col-md-10 col-md-offset-1">
     <table class="table table-striped">
       <thead>
         <th><%= t ".avatar" %></th>

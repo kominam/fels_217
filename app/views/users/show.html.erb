@@ -17,8 +17,10 @@
     </ul>
     <%= will_paginate @activities, param_name: "activities_page" %>
   </div>
-  <div class="col-md-6">
-    <%= t ".lesson" %>
-    <%= render "lessons" %>
-  </div>
+  <% unless current_user.is_admin? %>
+    <div class="col-md-6">
+      <%= t ".lesson" %>
+      <%= render "lessons" %>
+    </div>
+  <% end %>
 </div>

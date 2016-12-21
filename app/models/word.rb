@@ -21,6 +21,7 @@ class Word < ApplicationRecord
   scope :not_yet,->user_id, search{where NOT_YET_QUERY, user_id: user_id,
     search: "%#{search}%"}
   scope :recent,->{order created_at: :desc}
+  scope :word_available,->{joins(:results)}
   LEARNT_QUERY = "content like :search and id IN (SELECT word_id FROM results r
     INNER JOIN lessons l ON r.lesson_id = l.id WHERE l.user_id = :user_id)"
   NOT_YET_QUERY = "content like :search and id NOT IN (SELECT word_id FROM results r
@@ -51,6 +52,10 @@ class Word < ApplicationRecord
         csv << attributes.map{|attr| word.send(attr)}
       end
     end
+  end
+
+  def is_exist?
+    Word.joins(:results).include? self
   end
 
   private

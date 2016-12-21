@@ -45,12 +45,13 @@ class Admin::WordsController < ApplicationController
   end
 
   def destroy
-    if @word.destroy
-      flash[:success] = t ".word_destroyed"
-      redirect_to admin_words_path
+    if @word.is_exist?
+      flash[:danger] = t ".fail_destroy_word"
     else
-      flash.now[:danger] = t ".fail_destroy_word"
+      @word.destroy
+      flash[:success] = t ".word_destroyed"
     end
+    redirect_to :back
   end
 
   private
