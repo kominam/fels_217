@@ -4,7 +4,8 @@ en:
   login: "Log in"
   about: "About"
   base_title: "Framgia E-Learning System"
-  logo_text: "E-Learning"
+  logo1: "F-"
+  logo2: "Learning"
   signup: "Sign up now !"
   signup_title: "Sign up"
   signup_para: "This will be a signup page for new users."
@@ -18,6 +19,7 @@ en:
   word: "Words"
   not_enough_word: "Fail to start lesson: not enough word"
   require_1_correct: "require 1 correct answer"
+  permisson_restrict: "You don't have permisson"
   static_pages:
     home:
       welcome: "Welcome to the Framgia E-Learning System"
@@ -87,6 +89,8 @@ en:
         search: "Search"
         new: "New"
         index: "Index"
+        create_title: "Create new Category"
+        create_cate: "Create Category"
       category:
         edit: "Edit"
         del: "Delete"
@@ -118,6 +122,8 @@ en:
         add_word: "Add words"
       new:
         add_word: "Add words"
+      edit:
+        all_words: "All words"
       show:
         detail_words: "Word details"
         category: "Category"

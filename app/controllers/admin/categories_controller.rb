@@ -32,7 +32,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.destroy
       flash[:success] = t ".del_success"
     else
-      flash[:danger] = t ".del_fail"
+      flash[:danger] = @category.errors.full_messages
     end
   end
 
