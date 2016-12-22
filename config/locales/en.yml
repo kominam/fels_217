@@ -182,7 +182,6 @@ en:
       total_cate: "Total categories: "
       words: "Total words"
       category_name: "Category Name"
-    category:
       start: "Start"
   lessons:
     create:

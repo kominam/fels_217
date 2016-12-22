@@ -18,11 +18,17 @@ $color_tuatara_approx: #393939;
 $color_mercury_approx: #e6e6e6;
 $color_blue_chill_approx: #05969b;
 $black_80: rgba(0, 0, 0, 0.8);
+$color_swans_down_approx: #ddeeee;
+$color_william_approx: #336b6b;
+$color_mine_shaft_approx: #333;
+$color_laser_approx: #B0E0E6;
+$color_celeste_approx: #ccc;
+$color_kumera_approx: #957030;
+$color_chalky_approx: #FFFFE0;
 
-$font_0: Alegreya;
-$font_1: serif;
+$font_0: Arial;
+$font_1: sans-serif;
 
-$url_0: url(../images/img-sp.png);
 $url_0: url(asset-path('banner.jpg'));
 
 /* universal */
@@ -109,9 +115,6 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
-
-/* header */
 
 .header {
   background: #05969b;
@@ -633,6 +636,57 @@ h2.tittle {
       &:hover {
         color: $color_silver_sand_approx;
       }
+    }
+  }
+}
+
+.round-table {
+  border: solid 1px $color_swans_down_approx;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: normal 13px $font_0, $font_1;
+  thead th {
+    background-color: $color_swans_down_approx;
+    border: solid 1px $color_swans_down_approx;
+    color: $color_william_approx;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px $white;
+  }
+  tbody td {
+    border: solid 1px $color_swans_down_approx;
+    color: $color_mine_shaft_approx;
+    padding: 10px;
+    text-shadow: 1px 1px 1px $white;
+  }
+}
+.round-table-rounded {
+  border: none;
+  tbody {
+    td {
+      border: none;
+      border-top: solid 1px $color_kumera_approx;
+      background-color: $color_chalky_approx;
+    }
+    tr:last-child td {
+      &:first-child {
+        border-radius: 0 0 0 10px;
+      }
+      &:last-child {
+        border-radius: 0 0 10px 0;
+      }
+    }
+  }
+  thead th {
+    background-color: $color_laser_approx;
+    border: none;
+    text-shadow: 1px 1px 1px $color_celeste_approx;
+    color: $color_mine_shaft_approx;
+    &:first-child {
+      border-radius: 10px 0 0 0;
+    }
+    &:last-child {
+      border-radius: 0 10px 0 0;
     }
   }
 }

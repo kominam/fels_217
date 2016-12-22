@@ -16,14 +16,14 @@
     <%= @lesson.number_correct_answer.to_s + " / " + @lesson.results.size.to_s %>
   </span>
 </div>
-<ol>
-  <%= form_for @lesson do |f| %>
+<%= form_for @lesson do |f| %>
+  <ol>
     <%= f.fields_for :results do |result| %>
       <%= render "question", f: result %>
     <% end %>
-    <div class="col-md-2">
-      <%= f.submit t(".save_btn"), class: "btn btn-primary",
-        disabled: @lesson.is_complete? %>
-    </div>
-  <% end %>
-</ol>
+  </ol>
+  <div class="col-md-2">
+    <%= f.submit t(".save_btn"), class: "btn btn-primary",
+      disabled: @lesson.is_complete? %>
+  </div>
+<% end %>
