@@ -12,3 +12,4 @@ options:
   - not_yet
 user:
   per_page: 10
+all: "All category"

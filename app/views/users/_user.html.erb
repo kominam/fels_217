@@ -4,11 +4,11 @@
     <td><%= gravatar_for user, size: Settings.avatar_size %></td>
     <td><%= link_to user.user_name, user %></td>
     <td><%= user.email %></td>
-    <td>
-      <% if current_user.is_admin? && !user.current_user?(current_user) %>
+    <% if current_user.is_admin? && !user.current_user?(current_user) %>
+      <td>
         <%= link_to "", user, method: :delete,
           data: {confirm: t(".you")}, class: "btn fa fa-trash fa-lg" %>
-      <% end %>
-    </td>
+      </td>
+    <% end %>
   <% end %>
 </tr>

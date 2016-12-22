@@ -7,13 +7,15 @@
     <% end %>
   </div>
   <div class="col-md-10 col-md-offset-1">
-    <table class="table table-striped">
+    <table class="table round-table round-table-rounded">
       <thead>
         <th><%= t ".index" %></th>
         <th><%= t ".avatar" %></th>
         <th><%= t ".name" %></th>
         <th><%= t ".email" %></th>
-        <th><%= t ".delete" %></th>
+        <% if current_user.is_admin? %>
+          <th><%= t ".delete" %></th>
+        <% end %>
       </thead>
       <tbody>
         <%= render @users %>

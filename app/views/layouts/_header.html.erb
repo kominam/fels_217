@@ -10,21 +10,24 @@
         </div>
         <div class="collapse navbar-collapse nav-wil">
           <ul class="nav navbar-nav">
-            <li>
+            <li class="<%= current_page root_path %>">
               <%= link_to (t "home"), root_path,
-                class: "hvr-overline-from-center button2 active" %>
+                class: "hvr-overline-from-center button2" %>
             </li>
             <li>
               <%= link_to (t "about"), "/about",
                 class: "hvr-overline-from-center button2" %>
             </li>
             <% if logged_in? %>
-              <li><%= link_to (t "user"), users_path,
+              <li class="<%= current_page users_path %>">
+                <%= link_to (t "user"), users_path,
                 class: "hvr-overline-from-center button2" %></li>
-              <li><%= link_to (t "word"),
+              <li class="<%= current_page words_path %>">
+                <%= link_to (t "word"),
                 current_user.is_admin? ? admin_words_path : words_path,
                   class: "hvr-overline-from-center button2" %></li>
-              <li><%= link_to (t "Categories"),
+              <li class="<%= current_page categories_path %>">
+                <%= link_to (t "Categories"),
                 current_user.is_admin? ? admin_categories_path : categories_path,
                   class: "hvr-overline-from-center button2" %></li>
               <li class="dropdown">

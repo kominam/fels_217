@@ -71,4 +71,8 @@ module ApplicationHelper
       link_to user.user_name, user
     end
   end
+
+  def current_page path
+    current_page?(path) ? "active" : ""
+  end
 end
