@@ -6,7 +6,8 @@ en:
   base_title: "Framgia E-Learning System"
   logo1: "F-"
   logo2: "Learning"
-  signup: "Sign up now !"
+  banner_text: "We make it awesome"
+  signup: "Join us now !"
   signup_title: "Sign up"
   signup_para: "This will be a signup page for new users."
   user: "Users"
@@ -23,13 +24,18 @@ en:
   static_pages:
     home:
       welcome: "Welcome to the Framgia E-Learning System"
+      instruction: "OUR INSTRUCTIONS"
+      detail: "Sed ut perspiciatis unde omnis iste natus error sit
+        voluptatem accusantium doloremque explicabo."
+      support: "OUR SUPPORT"
+      guarantee: "OUR GUARANTEE"
+      reliable: "OUR RELIABILITY"
     about:
       title: "About"
       content: "This is an demo of e learning system"
   layouts:
     footer:
-      license: "© 2016 Copyright by me"
-      about: "About"
+      license: "© 2016 All Rights Reserved | Customed by Nam.dv"
   users:
     new:
       signup: "Create my account"
@@ -46,6 +52,8 @@ en:
       profile: "Succsess"
     index:
       all: "All user"
+      index: "Index"
+      delete: "Delete"
     show:
       please: "Please login!"
       lesson: "Review lesson"
@@ -119,7 +127,9 @@ en:
         category: "Category"
         word_content: "Word content"
         action: "Action"
-        add_word: "Add words"
+        del: "Delete"
+        edit: "Edit"
+        show: "Show"
       new:
         add_word: "Add words"
       edit:
@@ -132,9 +142,6 @@ en:
       word:
         add: "Add more"
         confirm: "Are you sure?"
-        del: "Delete"
-        edit: "Edit"
-        show: "Show"
       form:
         create: "Create"
       create:

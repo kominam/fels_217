@@ -1,11 +1,14 @@
 <tr>
-  <td><%= gravatar_for user, size: Settings.avatar_size %></td>
-  <td><%= link_to user.user_name, user %></td>
-  <td><%= user.email %></td>
-  <td>
-    <% if current_user.is_admin? && !user.current_user?(current_user) %>
-      <%= link_to t(".delete"), user, method: :delete,
-        data: {confirm: t(".you")}, class: "btn btn-danger" %>
-    <% end %>
-  </td>
+  <% unless user.is_admin? %>
+    <td><%= index_for user_counter, @users.current_page, Settings.user.per_page%></td>
+    <td><%= gravatar_for user, size: Settings.avatar_size %></td>
+    <td><%= link_to user.user_name, user %></td>
+    <td><%= user.email %></td>
+    <td>
+      <% if current_user.is_admin? && !user.current_user?(current_user) %>
+        <%= link_to "", user, method: :delete,
+          data: {confirm: t(".you")}, class: "btn fa fa-trash fa-lg" %>
+      <% end %>
+    </td>
+  <% end %>
 </tr>
