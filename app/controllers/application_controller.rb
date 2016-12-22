@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   before_action :logged_in_user
+  layout :admin_layout
 
   def load_all_category
     @categories = Category.all
@@ -12,6 +13,12 @@ class ApplicationController < ActionController::Base
   def load_user
     @user = User.find_by id: params[:id]
     render_404 if @user.nil?
+  end
+
+  def admin_layout
+    unless current_user.nil?
+      current_user.is_admin? ? "admin" : "application"
+    end
   end
 
   private

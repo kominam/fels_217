@@ -6,6 +6,8 @@ en:
   base_title: "Framgia E-Learning System"
   logo1: "F-"
   logo2: "Learning"
+  system: "System"
+  f: "Framgia"
   banner_text: "We make it awesome"
   signup: "Join us now !"
   signup_title: "Sign up"
@@ -36,6 +38,11 @@ en:
   layouts:
     footer:
       license: "© 2016 All Rights Reserved | Customed by Nam.dv"
+    sidebar:
+      categories: " Manage Categories"
+      words: " Manage Words"
+      users: " Manage Users"
+      dashboard: " Dashboard"
   users:
     new:
       signup: "Create my account"
@@ -99,10 +106,10 @@ en:
         index: "Index"
         create_title: "Create new Category"
         create_cate: "Create Category"
-      category:
         edit: "Edit"
         del: "Delete"
         show: "Show"
+      category:
         create_title: "Create new Category"
         create_cate: "Create Category"
         edit_title: "Edit category"
