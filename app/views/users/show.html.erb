@@ -1,26 +1,72 @@
 <% provide :title, @user.user_name %>
+<section class="wrapper">
 <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <%= render "shared/user_info" %>
-    </section>
-    <section class="stats">
-      <%= render "shared/stats" %>
+  <aside class="profile-nav col-lg-3">
+    <section class="panel">
+      <div class="user-heading round">
+        <a href="#">
+          <% if current_user.is_admin %>
+            <%= image_tag asset_url("banner.jpg") %>
+          <% else %>
+            <%= gravatar_for current_user, size: Settings.avatar_size %>
+          <% end %>
+        </a>
+        <h1><%= @user.user_name %></h1>
+        <p><%= @user.email %></p>
+        <span><%= link_to t(".view_profile"), @user %></span>
+      </div>
+      <ul class="nav nav-pills nav-stacked">
+        <section class="stats">
+          <%= render "shared/stats" %>
+        </section>
+      </ul>
     </section>
   </aside>
-  <div class="col-md-8">
-    <%= render "follow_form" if logged_in? %>
-  <div class="col-md-6">
-    <h3><%= t ".activities" %></h3>
-    <ul>
-      <%= render @activities.recent %>
-    </ul>
-    <%= will_paginate @activities, param_name: "activities_page" %>
-  </div>
-  <% unless current_user.is_admin? %>
-    <div class="col-md-6">
-      <%= t ".lesson" %>
-      <%= render "lessons" %>
-    </div>
-  <% end %>
+  <aside class="profile-info col-lg-9">
+    <section class="panel">
+      <form>
+        <textarea placeholder="Whats in your mind today?" rows="2"
+          class="form-control input-lg p-text-area"></textarea>
+      </form>
+      <footer class="panel-footer">
+        <button class="btn btn-danger pull-right">Post</button>
+        <ul class="nav nav-pills">
+          <li>
+            <a href="#"><i class="fa fa-map-marker"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-camera"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-film"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-microphone"></i></a>
+          </li>
+        </ul>
+      </footer>
+    </section>
+    <section class="panel">
+      <div class="panel-body bio-graph-info">
+        <div class="row">
+          <%= render "follow_form" if logged_in? %>
+          <div class="col-md-6">
+            <h3><%= t ".activities" %></h3>
+            <ul>
+              <%= render @activities.recent %>
+            </ul>
+            <%= will_paginate @activities, param_name: "activities_page" %>
+          </div>
+          <% unless current_user.is_admin? %>
+            <div class="col-md-6">
+              <h3><%= t ".lesson" %></h3>
+              <br>
+              <%= render "lessons" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </aside>
 </div>
+</section>

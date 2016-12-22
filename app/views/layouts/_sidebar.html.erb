@@ -1,0 +1,29 @@
+<aside>
+  <div id="sidebar"  class="nav-collapse ">
+    <ul class="sidebar-menu" id="nav-accordion">
+      <li class="sub-menu">
+        <i class="icon-laptop"></i>
+        <span><%= link_to t(".dashboard"), user_path(current_user), class: "fa fa-tachometer" %></span>
+      </li>
+      <li class="sub-menu">
+        <i class="icon-laptop"></i>
+        <span>
+          <%= link_to t(".categories"), admin_categories_path,
+            class: "fa fa-folder-open" %>
+        </span>
+      </li>
+      <li class="sub-menu">
+        <i class="icon-book"></i>
+        <span>
+          <%= link_to t(".words"), admin_words_path, class: "fa fa-wordpress" %>
+        </span>
+      </li>
+      <li class="sub-menu">
+        <i class="icon-cogs"></i>
+        <span>
+          <%= link_to t(".users"), users_path, class: "fa fa-address-book" %>
+        </span>
+      </li>
+    </ul>
+  </div>
+</aside>

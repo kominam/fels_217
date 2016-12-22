@@ -1,0 +1,896 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$color_boulder_approx: #797979;
+$color_porcelain_approx: #f1f2f7;
+$color_bittersweet_approx: #ff6c60;
+$color_outer_space_approx: #2a3542;
+$white: #fff;
+$color_mine_shaft_approx: #2e2e2e;
+$color_bright_gray_approx: #35404d;
+$color_bombay_approx: #aeb2b7;
+$color_wild_willow_approx: #a9d96c;
+$color_hit_gray_approx: #a4abbb;
+$color_viking_approx: #50c8ea;
+$color_fuscous_gray_approx: #555555;
+$color_swans_down_approx: #ddeeee;
+$color_william_approx: #336b6b;
+$color_kumera_approx: #957030;
+$color_chalky_approx: #FFFFE0;
+$color_laser_approx: #B0E0E6;
+$color_celeste_approx: #ccc;
+$black: #000;
+$color_bittersweet_approx: #ff766c;
+$color_white_30_approx: rgba(256,256,256,0.3);
+$color_gray_nurse_approx: #ebeae6;
+$color_schooner_approx: #89817f;
+$color_desert_storm_approx: #f8f7f5;
+$color_silk_approx: #bcb3aa;
+$color_pale_slate_approx: #c3c3c3;
+$color_mystic_approx: #e7ebee;
+$boulder: #7a7a7a;
+$color_turquoise_approx: #41cac0;
+$color_fountain_blue_approx: #4cc5cd;
+$color_froly_approx: #e26b7f;
+$color_sushi_approx: #97be4b;
+$color_light_wisteria_approx: #caa3da;
+$color_white_60_approx: rgba(256,256,256,0.6);
+$color_gray_approx: #818181;
+$color_gallery_approx: #eee;
+$color_riptide_approx: #8dd7d6;
+$color_lavender_approx: #b984dc;
+$color_jordy_blue_approx: #90b4e6;
+$color_swamp_green_approx: #aec785;
+$color_silver_approx: #bebebe;
+$wild_sand: #f4f4f4;
+
+$font_0: Open Sans;
+$font_1: sans-serif;
+
+input[type="button"],input[type="submit"]{
+  transition:0.5s all;
+  -webkit-transition:0.5s all;
+  -moz-transition:0.5s all;
+  -o-transition:0.5s all;
+  -ms-transition:0.5s all;
+}
+body a{
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  text-decoration:none;
+
+}
+body a:hover{
+  text-decoration:none;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+.inline {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.show_score {
+  color: blue;
+  font-weight:bold;
+  font-size: 1.5 em;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
+}
+
+.cate_name {
+  color: blue;
+  font-weight: bold;
+}
+
+body {
+  color: $color_boulder_approx;
+  background: $color_porcelain_approx;
+  font-family: $font_0, $font_1;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 13px;
+}
+a {
+  text-decoration: none;
+  outline: none;
+  &:hover {
+    text-decoration: none;
+    outline: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+::selection {
+  background: $color_bittersweet_approx;
+  color: $white;
+}
+::-moz-selection {
+  background: $color_bittersweet_approx;
+  color: $white;
+}
+#container {
+  width: 100%;
+  height: 100%;
+}
+ul li {
+  list-style: none;
+}
+
+#sidebar {
+  width: 210px;
+  height: 100%;
+  position: fixed;
+  background: $color_outer_space_approx;
+  ul li {
+    position: relative;
+  }
+  .sub-menu > .sub li {
+    padding-left: 32px;
+    &:last-child {
+      padding-bottom: 10px;
+    }
+  }
+}
+
+%extend_1 {
+  color: $color_bittersweet_approx;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+%extend_2 {
+  background: $color_bright_gray_approx;
+  color: $white;
+  display: block;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-collapse.collapse {
+  display: inline;
+}
+ul.sidebar-menu {
+  margin: -2px 0 0;
+  padding: 0;
+  margin-top: 75px;
+  li {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    &.sub-menu {
+      line-height: 15px;
+    }
+    a {
+      color: $color_bombay_approx;
+      text-decoration: none;
+      display: block;
+      padding: 15px 0 15px 10px;
+      font-size: 12px;
+      outline: none;
+      transition: all 0.3s ease;
+      span {
+        display: inline-block;
+      }
+      &.active {
+        @extend %extend_2;
+        i {
+          color: $color_bittersweet_approx;
+        }
+      }
+      &:hover {
+        @extend %extend_2;
+        i {
+          color: $color_bittersweet_approx;
+        }
+      }
+      &:focus {
+        @extend %extend_2;
+        i {
+          color: $color_bittersweet_approx;
+        }
+      }
+      i {
+        font-size: 15px;
+        padding-right: 6px;
+      }
+    }
+    ul.sub {
+      margin: -2px 0 0;
+      padding: 0;
+      li {
+        background: $color_bright_gray_approx;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        &:last-child {
+          border-radius: 0 0 4px 4px;
+        }
+        a {
+          font-size: 12px;
+          padding: 6px 0;
+          line-height: 35px;
+          height: 35px;
+          transition: all 0.3s ease;
+          color: $color_bombay_approx;
+          &:hover {
+            @extend %extend_1;
+          }
+        }
+        &.active a {
+          @extend %extend_1;
+        }
+      }
+    }
+  }
+}
+#sidebar > ul > li {
+  > ul.sub {
+    display: none;
+    > li > a {
+      display: block;
+    }
+  }
+  &.active > ul.sub {
+    display: block;
+  }
+}
+
+#main-content {
+  margin-left: 210px;
+  padding-top: 5%;
+}
+.header {
+  min-height: 60px;
+  padding: 0 15px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+}
+.footer {
+  min-height: 60px;
+  padding: 0 15px;
+}
+.white-bg {
+  background: $white;
+  border-bottom: 1px solid $color_porcelain_approx;
+}
+.wrapper {
+  display: inline-block;
+  margin-top: 60px;
+  padding: 15px;
+  width: 100%;
+}
+a.logo {
+  font-size: 21px;
+  color: $color_mine_shaft_approx;
+  float: left;
+  margin-top: 15px;
+  text-transform: uppercase;
+  &:hover {
+    text-decoration: none;
+    outline: none;
+  }
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+  span {
+    color: $color_bittersweet_approx;
+  }
+}
+
+%extend_1 {
+  color: $white;
+  border-bottom: none !important;
+  text-transform: uppercase;
+}
+
+
+.top-nav {
+  margin-top: 7px;
+  .username {
+    font-size: 13px;
+    color: $color_fuscous_gray_approx;
+  }
+  ul.top-menu > li {
+    margin-left: 10px;
+    > a {
+      border: 1px solid $color_gallery_approx;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 4px;
+      padding: 6px;
+      background: none;
+      margin-right: 0;
+      &:hover {
+        border: 1px solid $color_porcelain_approx;
+        background: $color_porcelain_approx;
+        .caret {
+          border-bottom-color: $black;
+          border-top-color: $black;
+        }
+      }
+      &:focus {
+        border: 1px solid $color_porcelain_approx;
+        background: $color_porcelain_approx;
+      }
+    }
+    .dropdown-menu.logout {
+      width: 268px !important;
+    }
+  }
+  li.dropdown .dropdown-menu {
+    float: right;
+    right: 0;
+    left: auto;
+  }
+  .dropdown-menu.extended.logout {
+    top: 50px;
+  }
+  .nav .caret {
+    border-bottom-color: $color_hit_gray_approx;
+    border-top-color: $color_hit_gray_approx;
+  }
+}
+.dropdown-menu.extended.logout > li {
+  float: left;
+  text-align: center;
+  width: 33.3%;
+  &:last-child {
+    float: left;
+    text-align: center;
+    width: 100%;
+    background: $color_wild_willow_approx;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 0 0 3px 3px;
+    > a {
+      @extend %extend_1;
+      &:hover {
+        @extend %extend_1;
+        > i {
+          color: $white;
+        }
+      }
+    }
+  }
+  > a {
+    color: $color_hit_gray_approx;
+    border-bottom: none !important;
+    &:hover {
+      background: none !important;
+      i {
+        color: $color_viking_approx;
+      }
+    }
+    i {
+      font-size: 17px;
+    }
+    > i {
+      display: block;
+    }
+  }
+}
+.full-width .dropdown-menu.extended.logout > li > a:hover {
+  background: none !important;
+  color: $color_viking_approx !important;
+}
+
+.round-table {
+  border: solid 1px $color_swans_down_approx;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font: normal 13px $font_0, $font_1;
+  thead th {
+    background-color: $color_swans_down_approx;
+    border: solid 1px $color_swans_down_approx;
+    color: $color_william_approx;
+    padding: 10px;
+    text-align: left;
+    text-shadow: 1px 1px 1px $white;
+  }
+  tbody td {
+    border: solid 1px $color_swans_down_approx;
+    color: $color_mine_shaft_approx;
+    padding: 10px;
+    text-shadow: 1px 1px 1px $white;
+  }
+}
+.round-table-rounded {
+  border: none;
+  tbody {
+    td {
+      border: none;
+      border-top: solid 1px $color_kumera_approx;
+      background-color: $color_chalky_approx;
+    }
+    tr:last-child td {
+      &:first-child {
+        border-radius: 0 0 0 10px;
+      }
+      &:last-child {
+        border-radius: 0 0 10px 0;
+      }
+    }
+  }
+  thead th {
+    background-color: $color_laser_approx;
+    border: none;
+    text-shadow: 1px 1px 1px $color_celeste_approx;
+    color: $color_mine_shaft_approx;
+    &:first-child {
+      border-radius: 10px 0 0 0;
+    }
+    &:last-child {
+      border-radius: 0 10px 0 0;
+    }
+  }
+}
+
+%extend_1 {
+  background: $color_desert_storm_approx !important;
+  border-left: 5px solid $color_bittersweet_approx;
+  color: $color_schooner_approx !important;
+}
+
+//original selectors
+//.p-text-area, .p-text-area:focus
+%extend_2 {
+  border: none;
+  font-weight: 300;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: none;
+  color: $color_pale_slate_approx;
+  font-size: 16px;
+}
+
+//original selectors
+//.activity span, .activity.alt span
+%extend_3 {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 50%;
+  background: $color_gallery_approx;
+  text-align: center;
+  color: $white;
+  font-size: 16px;
+}
+
+//original selectors
+//.activity .activity-desk i, .activity.alt .activity-desk i
+%extend_4 {
+  float: left;
+  font-size: 18px;
+  margin-right: 10px;
+  color: $color_silver_approx;
+}
+
+
+.profile-nav {
+  .user-heading {
+    background: $color_bittersweet_approx;
+    color: $white;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 4px 4px 0 0;
+    padding: 30px;
+    text-align: center;
+    h1 {
+      font-size: 22px;
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+    p {
+      font-size: 12px;
+    }
+    &.round a {
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 50%;
+      border: 10px solid $color_white_30_approx;
+      display: inline-block;
+    }
+    a img {
+      width: 112px;
+      height: 112px;
+      //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+      border-radius: 50%;
+    }
+  }
+  ul {
+    margin-top: 1px;
+    > li {
+      border-bottom: 1px solid $color_gray_nurse_approx;
+      margin-top: 0;
+      line-height: 30px;
+      &:last-child {
+        border-bottom: none;
+        > a:last-child {
+          //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+          border-radius: 0 0 4px 4px;
+        }
+      }
+      > a {
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+        border-radius: 0;
+        color: $color_schooner_approx;
+        border-left: 5px solid $white;
+        &:hover {
+          @extend %extend_1;
+        }
+        &:focus {
+          @extend %extend_1;
+        }
+        > i {
+          font-size: 16px;
+          padding-right: 10px;
+          color: $color_silk_approx;
+        }
+      }
+    }
+    li.active a {
+      @extend %extend_1;
+    }
+  }
+}
+.r-activity {
+  margin: 6px 0 0;
+  font-size: 12px;
+}
+.p-text-area {
+  @extend %extend_2;
+  &:focus {
+    @extend %extend_2;
+  }
+}
+.bio-graph-heading {
+  background: $color_turquoise_approx;
+  color: $white;
+  text-align: center;
+  font-style: italic;
+  padding: 40px 110px;
+  border-radius: 4px 4px 0 0;
+  font-size: 16px;
+  font-weight: 300;
+}
+.bio-graph-info {
+  color: $color_schooner_approx;
+  h1 {
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0 0 20px;
+  }
+}
+.bio-row {
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+  padding: 0 15px;
+  p span {
+    width: 100px;
+    display: inline-block;
+  }
+}
+.bio-chart {
+  float: left;
+  width: 40%;
+}
+.bio-desk {
+  float: left;
+  width: 60%;
+  h4 {
+    font-size: 15px;
+    font-weight: 400;
+    &.terques {
+      color: $color_fountain_blue_approx;
+    }
+    &.red {
+      color: $color_froly_approx;
+    }
+    &.green {
+      color: $color_sushi_approx;
+    }
+    &.purple {
+      color: $color_light_wisteria_approx;
+    }
+  }
+}
+.file-pos {
+  margin: 6px 0 10px;
+}
+.summary-head {
+  background: $color_froly_approx;
+  color: $white;
+  text-align: center;
+  border-bottom: 1px solid $color_froly_approx;
+  h4 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  p {
+    color: $color_white_60_approx;
+  }
+}
+.activity {
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+  &.alt {
+    width: 100%;
+    float: right;
+    margin-bottom: 10px;
+    span {
+      float: right;
+      @extend %extend_3;
+    }
+    .activity-desk {
+      margin-right: 70px;
+      position: relative;
+      i {
+        @extend %extend_4;
+      }
+      .panel {
+        float: right;
+        position: relative;
+      }
+    }
+  }
+  span {
+    float: left;
+    @extend %extend_3;
+  }
+  &.terques {
+    span {
+      background: $color_riptide_approx;
+    }
+    h4 {
+      color: $color_riptide_approx;
+    }
+  }
+  &.purple {
+    span {
+      background: $color_lavender_approx;
+    }
+    h4 {
+      color: $color_lavender_approx;
+    }
+  }
+  &.blue {
+    span {
+      background: $color_jordy_blue_approx;
+    }
+    h4 {
+      color: $color_jordy_blue_approx;
+    }
+  }
+  &.green {
+    span {
+      background: $color_swamp_green_approx;
+    }
+    h4 {
+      color: $color_swamp_green_approx;
+    }
+  }
+  h4 {
+    margin-top: 0;
+    font-size: 16px;
+  }
+  p {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+  .activity-desk {
+    margin-left: 70px;
+    position: relative;
+    i {
+      @extend %extend_4;
+    }
+    .arrow {
+      border-right: 8px solid $wild_sand !important;
+      border-bottom: 8px solid transparent;
+      border-top: 8px solid transparent;
+      display: block;
+      height: 0;
+      left: -7px;
+      position: absolute;
+      top: 13px;
+      width: 0;
+    }
+  }
+}
+.activity-desk {
+  .panel {
+    background: $wild_sand;
+    display: inline-block;
+  }
+  .arrow-alt {
+    border-left: 8px solid $wild_sand !important;
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    display: block;
+    height: 0;
+    right: -7px;
+    position: absolute;
+    top: 13px;
+    width: 0;
+  }
+  .album {
+    display: inline-block;
+    margin-top: 10px;
+    a {
+      margin-right: 10px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.profile-info .panel-footer {
+  background-color: $color_desert_storm_approx;
+  border-top: 1px solid $color_mystic_approx;
+  ul li a {
+    color: $boulder;
+  }
+}
+.profile-activity h5 {
+  font-weight: 300;
+  margin-top: 0;
+  color: $color_pale_slate_approx;
+}
+ul.summary-list {
+  display: inline-block;
+  padding-left: 0;
+  width: 100%;
+  margin-bottom: 0;
+  > li {
+    display: inline-block;
+    width: 19.5%;
+    text-align: center;
+    border-right: 1px solid $color_gray_nurse_approx;
+    > a {
+      padding: 10px 0;
+      display: inline-block;
+      color: $color_gray_approx;
+      > i {
+        display: block;
+        font-size: 18px;
+        padding-bottom: 5px;
+      }
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+}

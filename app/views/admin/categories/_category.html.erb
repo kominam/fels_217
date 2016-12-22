@@ -7,17 +7,15 @@
   </td>
   <td class="col-md-2"><%= category.words.size %></td>
   <td class="col-md-1">
-    <%= link_to t(".show"), admin_words_path, class: "btn btn-default" %>
+    <%= link_to "", admin_words_path, class: "btn fa fa-eye fa-lg" %>
   </td>
   <td class="col-md-1">
-    <button id="<%= category.id %>" class="update btn btn-info">
-      <%= t ".edit" %>
-    </button>
+    <button id="<%= category.id %>" class="update btn fa fa-pencil-square"></button>
   </td>
-  <td class="col-md-1"><%= link_to t(".del"),
+  <td class="col-md-1"><%= link_to "",
     admin_category_path(category), method: :delete, remote: true,
     id: category.id,
-    data: {confirm: t(".confirm")}, class: "del btn btn-danger" %></td>
+    data: {confirm: t(".confirm")}, class: "del btn fa fa-trash fa-lg" %></td>
     <div id="edit_<%= category.id %>" class="modal fade" role="form">
       <div class="modal-dialog">
         <div class="modal-content">

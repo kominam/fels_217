@@ -1,6 +1,6 @@
 <% provide :title, t(".all") %>
-<h1><%= t (".all") %></h1>
-<aside class="row">
+<aside class="behind row">
+  <h1><%= t (".all") %></h1>
   <div class="col-md-10 col-md-offset-1">
     <%= form_tag users_path, method: :get do %>
       <%= render "shared/search_user" %>
