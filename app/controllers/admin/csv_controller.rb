@@ -5,7 +5,7 @@ class Admin::CsvController < ApplicationController
     @words = Word.order(:created_at)
     respond_to do |format|
       format.html
-      format.csv {send_data @words.to_csv, filename: "words-#{Date.today}"}
+      format.csv {send_data @words.export, filename: "words-#{Date.today}"}
     end
   end
 

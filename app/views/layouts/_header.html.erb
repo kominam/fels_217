@@ -12,39 +12,46 @@
           <ul class="nav navbar-nav">
             <li class="<%= current_page root_path %>">
               <%= link_to (t "home"), root_path,
-                class: "hvr-overline-from-center button2" %>
+                class: "hvr-overline-from-center button2 fa fa-home" %>
             </li>
             <li>
               <%= link_to (t "about"), "/about",
-                class: "hvr-overline-from-center button2" %>
+                class: "hvr-overline-from-center button2 fa fa-info-circle" %>
             </li>
             <% if logged_in? %>
               <li class="<%= current_page users_path %>">
                 <%= link_to (t "user"), users_path,
-                class: "hvr-overline-from-center button2" %></li>
+                class: "hvr-overline-from-center button2 fa fa-user" %></li>
               <li class="<%= current_page words_path %>">
                 <%= link_to (t "word"), words_path,
-                  class: "hvr-overline-from-center button2" %></li>
+                  class: "hvr-overline-from-center button2 fa fa-wordpress" %></li>
               <li class="<%= current_page categories_path %>">
-                <%= link_to (t "Categories"), categories_path,
-                  class: "hvr-overline-from-center button2" %></li>
+                <%= link_to (t "cate_title"), categories_path,
+                  class: "hvr-overline-from-center button2 fa fa-folder-open" %></li>
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <%= current_user.user_name %><b class="caret"></b>
+                <a href="#" class="dropdown-toggle fa fa-chevron-circle-down"
+                  data-toggle="dropdown">
+                  <%= current_user.user_name %>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to (t "profile"), current_user %></li>
-                  <li><%= link_to (t "settings"), edit_user_path(current_user) %></li>
+                  <li>
+                    <%= link_to (t "profile"), current_user, class: "fa fa-user-md" %>
+                  </li>
+                  <li>
+                    <%= link_to (t "settings"), edit_user_path(current_user),
+                      class: "fa fa-cog" %>
+                  </li>
                   <li class="divider"></li>
                   <li>
-                    <%= link_to (t "logout"), logout_path, method: "delete" %>
+                    <%= link_to (t "logout"), logout_path, method: "delete",
+                      class: "fa fa-sign-out" %>
                   </li>
                 </ul>
               </li>
             <% else %>
               <li>
                 <%= link_to (t "login"), login_path,
-                class: "hvr-overline-from-center button2" %>
+                class: "hvr-overline-from-center button2 fa fa-sign-in" %>
               </li>
             <% end %>
           </ul>

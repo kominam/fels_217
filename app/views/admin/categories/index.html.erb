@@ -16,13 +16,6 @@
   </div>
   <div class="col-md-10 col-md-offset-1">
     <div class="col-md-6">
-      <span>
-        <%= link_to "", new_admin_category_path, class: "btn fa fa-plus-square fa-3x",
-        id: "createCate" %>
-      </span>
-      <span>
-        <%= link_to t(".import"), admin_csv_index_path %>
-      </span>
       <div id="newCate" class="modal fade" role="form">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -48,9 +41,17 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <span class="pull-right" style="line-height: 50px;">
-        <%= t(".total_cate") + @categories.size.to_s %>
+    <div class="col-md-6 " style="line-height: 50px;">
+      <span class="pull-right">
+        <%= link_to "", admin_csv_index_path, class: "btn fa fa-upload" %>
+      </span>
+      <span class="pull-right">
+        <%= link_to "", admin_csv_index_path(format: :csv),
+          class: "btn fa fa-download" %>
+      </span>
+      <span class="pull-right">
+        <%= link_to "", new_admin_category_path, class: "btn fa fa-plus-square fa-3x",
+        id: "createCate" %>
       </span>
     </div>
     <table class="table round-table round-table-rounded">
@@ -68,6 +69,9 @@
         <%= render @categories %>
       </tbody>
     </table>
+    <span class="pull-right" style="line-height: 50px;">
+      <%= t(".total_cate") + @categories.size.to_s %>
+    </span>
     <%= will_paginate @categories %>
   </div>
 </div>
