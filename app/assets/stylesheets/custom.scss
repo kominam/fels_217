@@ -694,3 +694,54 @@ h2.tittle {
     }
   }
 }
+
+.question {
+  padding:20px 0px 0px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.answer {
+  padding: 5px 0px 10px 10px;
+  font-size: 10px;
+}
+.horizontal-line {
+  width: 90%;
+}
+
+.timeline {
+  list-style: none;
+}
+.timeline > li {
+  margin-bottom: 10px;
+}
+
+@media ( min-width : 440px ){
+  .timeline > li {
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+  }
+  .timeline-date {
+    width: 25%;
+    float: left;
+    margin-top: 20px;
+    line-height: 8%;
+  }
+  .timeline-content {
+    width: 75%;
+    float: left;
+    border-left: 3px #e5e5d1 solid;
+    padding-left: 30px;
+    padding-top: 10px;
+  }
+  .timeline-content:before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #6fc173;
+    position: absolute;
+    left: 24%;
+    top: 27%;
+    border-radius: 100%;
+  }
+}

@@ -1,10 +1,11 @@
 <li>
   <h4><%= f.label f.object.word.content %></h4>
   <% f.object.word.answers.each do |answer| %>
-    <label class="radio-inline">
+    <label class="question">
       <%= answer.content %>
     </label>
-    <%= f.radio_button :answer_id, answer.id , disabled: @lesson.is_complete?%>
+    <%= f.radio_button :answer_id, answer.id , class: "answer",
+      disabled: @lesson.is_complete?%>
   <% end %>
   <% if @lesson.is_complete? %>
     <% if correct_answer f.object.answer_id %>
@@ -14,3 +15,4 @@
     <% end %>
   <% end %>
 </li>
+<hr class="horizontal-line">
