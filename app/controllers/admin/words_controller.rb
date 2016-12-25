@@ -7,6 +7,9 @@ class Admin::WordsController < ApplicationController
     @words = Word.in_category(params[:category_id])
       .all_words(current_user.id, params[:search]).includes(:category)
       .paginate page: params[:page], per_page: Settings.per_page
+    if request.xhr?
+      render partial: "word", collection: @words
+    end
   end
 
   def show

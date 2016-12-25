@@ -7,5 +7,8 @@ class WordsController < ApplicationController
     @words = Word.in_category(params[:category_id]).includes(:category)
       .send(params[:status], current_user.id, params[:search]).recent
       .paginate page: params[:page], per_page: Settings.per_page
+    if request.xhr?
+      render partial: "word", collection: @words
+    end
   end
 end
