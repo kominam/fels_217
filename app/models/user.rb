@@ -21,6 +21,9 @@ class User < ApplicationRecord
   validates :user_name,  presence: true, length: {maximum: 50}
   has_secure_password
 
+  scope :search, ->search{
+    where "user_name LIKE ? OR email LIKE ?", "%#{search}%", "%#{search}%"}
+
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
       BCrypt::Engine.cost
@@ -65,9 +68,5 @@ class User < ApplicationRecord
 
   def downcase_email
     self.email = email.downcase
-  end
-
-  def self.search_name(q)
-    where("user_name OR email LIKE ? ", "%#{q}%")
   end
 end

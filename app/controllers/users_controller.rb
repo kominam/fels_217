@@ -4,8 +4,11 @@ class UsersController < ApplicationController
   before_action :verify_admin, only: :destroy
 
   def index
-    @users = User.search_name(params[:q])
+    @users = User.search(params[:q])
       .paginate page: params[:page], per_page: Settings.user.per_page
+    if request.xhr?
+      render partial: "user", collection: @users
+    end
   end
 
   def show
