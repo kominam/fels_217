@@ -22,6 +22,9 @@ $color_chalky_approx: #FFFFE0;
 $color_laser_approx: #B0E0E6;
 $color_celeste_approx: #ccc;
 $black: #000;
+$color_tuatara_approx: #393939;
+$color_silver_sand_approx: #c2c2c2;
+$color_red_orange_approx: #fc3a3a;
 $color_bittersweet_approx: #ff766c;
 $color_white_30_approx: rgba(256,256,256,0.3);
 $color_gray_nurse_approx: #ebeae6;
@@ -379,10 +382,28 @@ ul.sidebar-menu {
   right: 0;
   z-index: 1002;
 }
-.footer {
-  min-height: 60px;
-  padding: 0 15px;
+
+.btn-primary {
+  background-color: #05969b;
 }
+
+.footer {
+  background: $color_tuatara_approx;
+  margin-top: 30px;
+  p {
+    line-height: 70px;
+    font-size: 14px;
+    color: $color_silver_sand_approx;
+    font-weight: 600;
+    a {
+      color: $color_red_orange_approx;
+      &:hover {
+        color: $color_silver_sand_approx;
+      }
+    }
+  }
+}
+
 .white-bg {
   background: $white;
   border-bottom: 1px solid $color_porcelain_approx;

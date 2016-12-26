@@ -10,7 +10,7 @@ $(document).on('turbolinks:load', function() {
   }
 
   search.keyup(function(){
-    let input_search = $(this).val().toLowerCase();
+    var input_search = $(this).val().toLowerCase();
       send_request(input_search);
   });
 });

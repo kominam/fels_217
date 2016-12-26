@@ -19,9 +19,9 @@ $(document).on('turbolinks:load', function() {
   });
 
   search.on('change',function(){
-    let input_search = $(this).val();
+    var input_search = $(this).val();
     cate_id.on('change', function(){
-      let category = this.value;
+      var category = this.value;
       send_request(input_search,category);
     });
   });

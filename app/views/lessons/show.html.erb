@@ -22,8 +22,4 @@
       <%= render "question", f: result %>
     <% end %>
   </ol>
-  <div class="col-md-2">
-    <%= f.submit t(".save_btn"), class: "btn btn-primary",
-      disabled: @lesson.is_complete? %>
-  </div>
 <% end %>

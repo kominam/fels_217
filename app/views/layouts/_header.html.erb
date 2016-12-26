@@ -3,13 +3,13 @@
     <div class="header-nav">
       <nav class="navbar navbar-default">
         <div class="navbar-header">
-          <h1><a class="navbar-brand" href="http://localhost:3000/">
+          <h1><a class="navbar-brand" href="<%= root_path %>">
             <i class="glyphicon glyphicon-education" aria-hidden="true"></i>
             <span><%= t ("logo1") %></span><%= t ("logo2") %></a>
           </h1>
         </div>
         <div class="collapse navbar-collapse nav-wil">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-right">
             <li class="<%= current_page root_path %>">
               <%= link_to (t "home"), root_path,
                 class: "hvr-overline-from-center button2 fa fa-home" %>

@@ -16,8 +16,6 @@
     <%= f.fields_for :results do |result| %>
       <%= render "question", f: result %>
     <% end %>
-    <div class="col-md-2">
-      <%= f.submit t(".save_btn"), class: "btn btn-primary" %>
-    </div>
+    <%= f.submit t(".save_btn"), class: "btn btn-primary" %>
   <% end %>
 </ol>

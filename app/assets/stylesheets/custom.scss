@@ -125,8 +125,6 @@ p {
   border:none;
 }
 .navbar-nav {
-  float: right;
-  width: 50%;
   li {
     a {
       padding-top: 25px;
@@ -168,6 +166,10 @@ p {
   }
 }
 
+.btn-primary {
+  background-color: #05969b;
+}
+
 .glyphicon-cutlery {
   left: -10px;
   top: 7px;
@@ -201,7 +203,7 @@ a.navbar-brand span {
 }
 
 .dropdown-menu {
-  background-color: pink;
+  background-color: #27959a;
 }
 
 .banner {
@@ -626,15 +628,13 @@ h2.tittle {
 }
 
 .footer {
-  clear: both;
-  padding: 50px 0;
   background: $color_tuatara_approx;
+  margin-top: 30px;
   p {
-    margin: 44px 0 0 0;
+    line-height: 70px;
     font-size: 14px;
     color: $color_silver_sand_approx;
     font-weight: 600;
-    text-align: center;
     a {
       color: $color_red_orange_approx;
       &:hover {

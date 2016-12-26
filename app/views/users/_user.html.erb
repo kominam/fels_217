@@ -6,8 +6,8 @@
     <td><%= user.email %></td>
     <% if current_user.is_admin? && !user.current_user?(current_user) %>
       <td>
-        <%= link_to "", user, method: :delete,
-          data: {confirm: t(".you")}, class: "btn fa fa-trash fa-lg" %>
+        <%= link_to "", edit_user_path(user),
+          class: "btn fa fa-pencil-square fa-lg" %>
       </td>
     <% end %>
   <% end %>
